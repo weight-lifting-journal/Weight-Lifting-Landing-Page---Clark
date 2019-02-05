@@ -184,12 +184,20 @@ footer {
 }
 .container {
   grid-column: 1 / -1;
-  background: skyblue;
+  display: grid;
+  grid-template-columns: minmax(1rem, 1fr) repeat(12, minmax(1rem, 6rem)) minmax(1rem, 1fr);
+  background: darkblue;
 }
 @media (min-width: 880px) {
   .container {
     grid-column: 4 / -4;
   }
+}
+h1,
+h2,
+h3,
+h4 {
+  text-transform: uppercase;
 }
 h4 {
   margin: 8px 0 16px;
@@ -216,8 +224,24 @@ header div p {
 }
 .header-container {
   grid-column: 1 / -1;
-  background: skyblue;
+  background: darkblue;
 }
 p {
   margin: 8px 0 16px;
+}
+section {
+  grid-column: 2 / -2;
+  padding: 24px 0;
+}
+section:first-child {
+  padding-top: 48px;
+}
+section h4 {
+  border-bottom: 2px solid white;
+  color: white;
+  text-align: right;
+}
+section p {
+  color: white;
+  text-align: right;
 }

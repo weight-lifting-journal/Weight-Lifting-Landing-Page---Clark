@@ -1,9 +1,15 @@
 .container {
     .grid-all;
+    .foundation-grid;
     background: @body-bg-color-one;
     @media @desk-break {
         .grid-main;
     }
+}
+
+// Uppercase the headers 
+h1, h2, h3, h4 {
+    text-transform: uppercase;
 }
 
 h4 {
@@ -38,4 +44,21 @@ header {
 
 p {
     margin: 8px 0 16px;
+}
+
+section {
+    .grid-wide;
+    padding: 24px 0;
+    &:first-child {
+        padding-top: 48px;
+    }
+    h4 {
+        border-bottom: 2px solid @header-font-color;
+        color: @header-font-color;
+        text-align: right;
+    }
+    p {
+        color: @body-font-color;
+        text-align: right;
+    }
 }
