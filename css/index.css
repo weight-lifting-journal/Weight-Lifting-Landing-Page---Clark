@@ -160,6 +160,7 @@ header nav {
 header nav a {
   color: white;
   display: inline-block;
+  overflow: hidden;
   padding: 16px 0;
   text-decoration: none;
   text-indent: 3rem;
@@ -213,7 +214,7 @@ header div {
   width: 100%;
 }
 header div h1 {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
   font-size: 2rem;
   padding-bottom: 16px;
   margin-bottom: 24px;
@@ -230,18 +231,20 @@ p {
   margin: 8px 0 16px;
 }
 section {
-  grid-column: 2 / -2;
+  grid-column: 3 / -3;
   padding: 24px 0;
 }
 section:first-child {
   padding-top: 48px;
 }
 section h4 {
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.25);
   color: white;
-  text-align: right;
+  padding-bottom: 12px;
 }
 section p {
   color: white;
+}
+section:nth-child(odd) {
   text-align: right;
 }

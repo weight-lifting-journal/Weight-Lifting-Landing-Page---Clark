@@ -8,21 +8,7 @@
     grid-template-columns: repeat(12, minmax(1rem, 6rem));
 }
 
-.grid-all() {
-    grid-column: 1 / -1
-}
-
-.grid-main() {
-    grid-column: 4 / -4;
-}
-.grid-narrow() {
-    grid-column: 3 / -3;
-
-    @media @desk-break {
-        grid-column: 5 / -5;
-    }
-}
-
-.grid-wide() {
-    grid-column: 2 / -2;
+// .grid-column(2);
+.grid-column(@column) {
+    grid-column: @column / -@column;
 }
