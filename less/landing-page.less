@@ -1,11 +1,9 @@
-.container {
-    .grid-column(1);
-    .foundation-grid;
-    background: @body-bg-color-one;
-    @media @desk-break {
-        .grid-column(4);
-    }
-}
+// .container {
+//     background: @body-bg-color-one;
+//     @media @desk-break {
+//         .grid-column(4);
+//     }
+// }
 
 // Uppercase the headers 
 h1, h2, h3, h4 {
@@ -17,9 +15,10 @@ h4 {
 }
 
 header {
+    .grid-column(1);
+    .path-clipper;
     align-items: flex-start;
     background: gray;
-    clip-path: polygon(0 0, 100% 0%, 100% 90%, 0 100%);
     // flex-wrap: wrap;
     height: 60vh;
     div {
@@ -38,12 +37,8 @@ header {
     }
 }
 .header-container {
-    .grid-column(1);
+    .foundation-grid;
     background: @body-bg-color-one;
-}
-
-p {
-    margin: 8px 0 16px;
 }
 
 section {
@@ -64,5 +59,27 @@ section {
     }
     &:nth-child(odd) {
         text-align: right;
+    }
+}
+.section-wrapper {
+    .foundation-grid;
+    &::before {
+        background-image: url('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,100 100,0 100,100" style="fill:#{$color};" /></svg>');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        content: '';
+        height: 24px;
+        position: absolute;
+        top: -24px;
+        width: 100%
+    }
+    &.style-one {
+        background: @body-bg-color-one;
+    }
+    &.style-two {
+        background: @body-bg-color-two;
+    }
+    &.style-three {
+        background: @body-bg-color-three;
     }
 }

@@ -129,10 +129,6 @@ table {
 * {
   box-sizing: border-box;
 }
-body {
-  display: grid;
-  grid-template-columns: minmax(1rem, 1fr) repeat(12, minmax(1rem, 6rem)) minmax(1rem, 1fr);
-}
 h1 {
   font-size: 3rem;
 }
@@ -183,17 +179,6 @@ footer {
   margin: 48px 0;
   text-align: center;
 }
-.container {
-  grid-column: 1 / -1;
-  display: grid;
-  grid-template-columns: minmax(1rem, 1fr) repeat(12, minmax(1rem, 6rem)) minmax(1rem, 1fr);
-  background: darkblue;
-}
-@media (min-width: 880px) {
-  .container {
-    grid-column: 4 / -4;
-  }
-}
 h1,
 h2,
 h3,
@@ -204,9 +189,10 @@ h4 {
   margin: 8px 0 16px;
 }
 header {
+  grid-column: 1 / -1;
+  clip-path: polygon(0 0, 100% 0%, 100% 90%, 0 100%);
   align-items: flex-start;
   background: gray;
-  clip-path: polygon(0 0, 100% 0%, 100% 90%, 0 100%);
   height: 60vh;
 }
 header div {
@@ -224,11 +210,9 @@ header div p {
   text-transform: uppercase;
 }
 .header-container {
-  grid-column: 1 / -1;
-  background: darkblue;
-}
-p {
-  margin: 8px 0 16px;
+  display: grid;
+  grid-template-columns: minmax(1rem, 1fr) repeat(12, minmax(1rem, 6rem)) minmax(1rem, 1fr);
+  background: #2E3549;
 }
 section {
   grid-column: 3 / -3;
@@ -247,4 +231,27 @@ section p {
 }
 section:nth-child(odd) {
   text-align: right;
+}
+.section-wrapper {
+  display: grid;
+  grid-template-columns: minmax(1rem, 1fr) repeat(12, minmax(1rem, 6rem)) minmax(1rem, 1fr);
+}
+.section-wrapper::before {
+  background-image: url('<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100" preserveAspectRatio="none"><polygon points="0,100 100,0 100,100" style="fill:#{$color};" /></svg>');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  content: '';
+  height: 24px;
+  position: absolute;
+  top: -24px;
+  width: 100%;
+}
+.section-wrapper.style-one {
+  background: #2E3549;
+}
+.section-wrapper.style-two {
+  background: #4E5798;
+}
+.section-wrapper.style-three {
+  background: #2E2F42;
 }
