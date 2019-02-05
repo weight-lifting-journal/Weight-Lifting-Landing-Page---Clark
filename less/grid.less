@@ -1,0 +1,14 @@
+.foundation-grid() {
+    display: grid;
+    grid-template-columns: minmax(1rem, 1fr) repeat(12, minmax(1rem, 6rem)) minmax(1rem, 1fr);
+}
+
+.inner-grid() {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(1rem, 6rem));
+}
+
+// .grid-column(2);
+.grid-column(@column) {
+    grid-column: @column / -@column;
+}
