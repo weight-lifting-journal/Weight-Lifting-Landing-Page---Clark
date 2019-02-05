@@ -126,6 +126,9 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+* {
+  box-sizing: border-box;
+}
 body {
   display: grid;
   grid-template-columns: minmax(1rem, 1fr) repeat(12, minmax(1rem, 6rem)) minmax(1rem, 1fr);
@@ -146,20 +149,33 @@ p {
   line-height: 1.25;
 }
 header {
-  grid-column: 1 / -1;
   display: flex;
   justify-content: space-between;
-  padding: 32px 16px 32px;
+  padding: 0 16px 32px;
 }
-header a {
-  color: inherit;
+header nav {
+  position: absolute;
+  right: 0;
+}
+header nav a {
+  color: white;
+  display: inline-block;
+  padding: 16px 0;
   text-decoration: none;
+  text-indent: 3rem;
+  white-space: nowrap;
+  width: 3rem;
+}
+header nav a::before {
+  font-family: "Font Awesome 5 Free";
+  text-align: right;
+  padding-right: 1rem;
+  content: '\f0c9';
+  float: right;
 }
 header h1 {
+  color: white;
   font-family: monospace;
-}
-nav {
-  display: none;
 }
 footer {
   grid-column: 2 / -2;
@@ -168,6 +184,7 @@ footer {
 }
 .container {
   grid-column: 1 / -1;
+  background: skyblue;
 }
 @media (min-width: 880px) {
   .container {
@@ -178,10 +195,28 @@ h4 {
   margin: 8px 0 16px;
 }
 header {
+  align-items: flex-start;
   background: gray;
+  clip-path: polygon(0 0, 100% 0%, 100% 90%, 0 100%);
+  height: 60vh;
 }
-header h1 {
-  margin-top: 120px;
+header div {
+  align-self: center;
+  width: 100%;
+}
+header div h1 {
+  border-bottom: 2px solid white;
+  font-size: 2rem;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+header div p {
+  color: white;
+  text-transform: uppercase;
+}
+.header-container {
+  grid-column: 1 / -1;
+  background: skyblue;
 }
 p {
   margin: 8px 0 16px;
