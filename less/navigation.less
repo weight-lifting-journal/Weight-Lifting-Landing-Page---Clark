@@ -9,6 +9,7 @@ header {
         a {
             color: @nav-font-color;
             display: inline-block;
+            font-family: @body-font-stack;
             overflow: hidden;
             padding: 16px 0;
             text-decoration: none;
@@ -24,6 +25,14 @@ header {
                 // padding-top: 1.5rem;
                 content: '\f0c9';
                 float: right;
+            }
+            @media @desk-break {
+                border: 1px solid @border-line-color;
+                border-radius: 10px;
+                margin: 24px;
+                padding: 16px 0;
+                text-indent: 1rem;
+                width: auto;
             }
         }
     }

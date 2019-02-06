@@ -162,6 +162,7 @@ header nav {
 header nav a {
   color: white;
   display: inline-block;
+  font-family: 'Open Sans', sans-serif;
   overflow: hidden;
   padding: 16px 0;
   text-decoration: none;
@@ -175,6 +176,16 @@ header nav a::before {
   padding-right: 1rem;
   content: '\f0c9';
   float: right;
+}
+@media (min-width: 880px) {
+  header nav a {
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    margin: 24px;
+    padding: 16px 0;
+    text-indent: 1rem;
+    width: auto;
+  }
 }
 header h1 {
   color: white;
