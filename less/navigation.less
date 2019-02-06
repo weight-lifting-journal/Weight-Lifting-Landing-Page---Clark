@@ -1,17 +1,24 @@
 header {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 16px 32px;
+    // display: flex;
+    // justify-content: space-between;
+    div {
+        padding: 0 16px 32px;
+        margin: 124px 0;
+    }
     nav {
-        position: absolute;
-        // top: 0;
-        right: 0;
+        display: flex;
+        height: 48px;
+        position: fixed;
+        width: 100%;
+        z-index: 2;
         a {
             color: @nav-font-color;
             display: inline-block;
             font-family: @body-font-stack;
             overflow: hidden;
             padding: 16px 0;
+            position: absolute;
+            right: 0;
             text-decoration: none;
             text-indent: 3rem;
             white-space: nowrap;
@@ -35,9 +42,26 @@ header {
                 width: auto;
             }
         }
+        p {
+            opacity: 0;
+        }
+        &.sticky-header {
+            background: @nav-bg-color;
+            border-bottom: 1px solid rgba(0,0,0,0.8);
+            p {
+                align-self: center;
+                color: @logo-font-color;
+                display: inline-block;
+                font-family: @logo-font-stack;
+                font-size: 24px;
+                margin-left: 20%;
+                opacity: 1;
+                text-align: center;
+            }
+        }
     }
     h1 {
-        color: @nav-font-color;
+        color: @logo-font-color;
         font-family: @logo-font-stack;
     }
 }

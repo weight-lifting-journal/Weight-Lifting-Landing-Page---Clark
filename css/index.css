@@ -150,14 +150,16 @@ p {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.25;
 }
-header {
-  display: flex;
-  justify-content: space-between;
+header div {
   padding: 0 16px 32px;
+  margin: 124px 0;
 }
 header nav {
-  position: absolute;
-  right: 0;
+  display: flex;
+  height: 48px;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
 }
 header nav a {
   color: white;
@@ -165,6 +167,8 @@ header nav a {
   font-family: 'Open Sans', sans-serif;
   overflow: hidden;
   padding: 16px 0;
+  position: absolute;
+  right: 0;
   text-decoration: none;
   text-indent: 3rem;
   white-space: nowrap;
@@ -186,6 +190,23 @@ header nav a::before {
     text-indent: 1rem;
     width: auto;
   }
+}
+header nav p {
+  opacity: 0;
+}
+header nav.sticky-header {
+  background: #2E3549;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.8);
+}
+header nav.sticky-header p {
+  align-self: center;
+  color: white;
+  display: inline-block;
+  font-family: monospace;
+  font-size: 24px;
+  margin-left: 20%;
+  opacity: 1;
+  text-align: center;
 }
 header h1 {
   color: white;
