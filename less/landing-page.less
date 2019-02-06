@@ -1,11 +1,3 @@
-// .container {
-//     background: @body-bg-color-one;
-//     @media @desk-break {
-//         .grid-column(4);
-//     }
-// }
-
-// Uppercase the headers 
 h1, h2, h3, h4 {
     text-transform: uppercase;
 }
@@ -15,13 +7,11 @@ h4 {
 }
 
 header {
-    .grid-column(1);
-    // .path-clipper;
-    align-items: flex-start;
     background: gray;
-    // flex-wrap: wrap;
+    .foundation-grid;
     height: 60vh;
     div {
+        .grid-column(1);
         align-self: center;
         width: 100%;
         h1 {
@@ -34,14 +24,10 @@ header {
             color: @nav-font-color;
             text-transform: uppercase;
         }
+        @media @desk-break {
+            .grid-column(4);
+        }
     }
-    @media @desk-break {
-        .grid-column(4);
-    }
-}
-.header-container {
-    .foundation-grid;
-    background: gray;
 }
 
 section {
@@ -94,7 +80,3 @@ section {
         text-align: right;
     }
 }
-
-
-// data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%234c5c96%3B' /%3E%3C/svg%3E
-// data:image/svg+xml,%3C?xml%20version%3D%221.0%22%20?%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20preserveAspectRatio%3D%22none%22%3E%3Cpolygon%20points%3D%220,100%20100,0%20100,100%22%20style%3D%22fill%3A%23%7B@indigo%7D%3B%22%20/%3E%3C/svg%3E

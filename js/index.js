@@ -24,3 +24,19 @@ window.addEventListener('scroll', function(e) {
     scrollTicking = true;
   } // else, wait for `requestAnimationFrame()` to fire
 });
+
+
+// ––– Menu Display ––– //
+// get the nav-menu button
+const navMenu = document.getElementById('nav-menu');
+// get the menu overlay
+const menuOverlay = document.getElementById('menu-overlay');
+// add event listener to nav-menu button
+navMenu.addEventListener('click', () => menuOverlay.classList.add('display-menu'));
+// get menu close button
+const menuClose = document.getElementsByClassName('close')['0'];
+// add event listener to menu-close button
+menuClose.addEventListener('click', () => menuOverlay.classList.remove('display-menu'));
+// lightbox effect for menu
+// add event listener to menu overlay
+menuOverlay.addEventListener('click', () => menuOverlay.classList.remove('display-menu'));
