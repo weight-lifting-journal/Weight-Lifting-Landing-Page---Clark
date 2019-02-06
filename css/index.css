@@ -150,6 +150,61 @@ p {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.25;
 }
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 16px;
+}
+.carousel .left-button,
+.carousel .right-button {
+  background-color: #2E3549;
+  border-radius: 50%;
+  color: white;
+  font-size: 40px;
+  height: 50px;
+  position: absolute;
+  text-align: center;
+  width: 50px;
+  cursor: pointer;
+}
+.carousel .left-button:hover,
+.carousel .right-button:hover {
+  color: #2E3549;
+  background-color: white;
+  border: 3px solid #2E3549;
+}
+.carousel .left-button {
+  top: 50%;
+  left: 25px;
+  transform: translate(0, -50%);
+}
+.carousel .right-button {
+  top: 50%;
+  right: 25px;
+  transform: translate(0, -50%);
+}
+.carousel img {
+  width: 100%;
+}
+.caption {
+  background: rgba(46, 47, 66, 0.8);
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 16px;
+  position: absolute;
+  width: 100%;
+}
+footer {
+  grid-column: 2 / -2;
+  background: grey;
+  padding: 128px 0 48px;
+  text-align: center;
+}
 header div {
   padding: 0 16px 32px;
   margin: 124px 0;
@@ -277,12 +332,6 @@ nav.menu-nav p {
     width: 20vw;
   }
 }
-footer {
-  grid-column: 2 / -2;
-  background: grey;
-  padding: 128px 0 48px;
-  text-align: center;
-}
 h1,
 h2,
 h3,
@@ -327,14 +376,14 @@ section h4 {
   color: white;
   padding-bottom: 12px;
 }
-section img {
+section img.button {
   border-radius: 100%;
   height: 40vw;
   margin: 16px 0;
   max-width: 40vw;
 }
 @media (min-width: 880px) {
-  section img {
+  section img.button {
     height: 120px;
     width: 120px;
   }
@@ -426,4 +475,33 @@ section img {
   bottom: -40px;
   left: 0;
   transform: scaleY(-1);
+}
+.section-wrapper.style-four {
+  background: #4c5c96;
+}
+.section-wrapper.style-four:before,
+.section-wrapper.style-four:after {
+  background-image: url('data:image/svg+xml,%3C?xml%20version%3D%221.0%22%20?%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20preserveAspectRatio%3D%22none%22%3E%3Cpolygon%20points%3D%220,100%20100,0%20100,100%22%20style%3D%22fill%3A%234c5c96%3B%22/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  content: '';
+  display: block;
+  height: 40px;
+  position: absolute;
+  width: 100%;
+}
+.section-wrapper.style-four:before {
+  left: 0;
+  top: -40px;
+}
+.section-wrapper.style-four:after {
+  bottom: -40px;
+  left: 0;
+  transform: scaleY(-1);
+}
+.section-wrapper.style-four:before {
+  transform: scaleX(-1);
+}
+.section-wrapper.style-four:after {
+  transform: scaleY(-1) scaleX(-1);
 }
