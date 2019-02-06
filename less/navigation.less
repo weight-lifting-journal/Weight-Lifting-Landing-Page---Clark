@@ -1,34 +1,127 @@
 header {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 16px 32px;
+    div {
+        padding: 0 16px 32px;
+        margin: 124px 0;
+    }
     nav {
-        position: absolute;
-        // top: 0;
-        right: 0;
+        display: flex;
+        height: 48px;
+        position: fixed;
+        width: 100%;
+        z-index: 2;
         a {
             color: @nav-font-color;
             display: inline-block;
+            font-family: @body-font-stack;
             overflow: hidden;
             padding: 16px 0;
+            position: absolute;
+            right: 0;
             text-decoration: none;
             text-indent: 3rem;
             white-space: nowrap;
             width: 3rem;
             &::before {
                 font-family: "Font Awesome 5 Free";
-                // left: 0;
-                // text-indent: 0;
                 text-align: right;
                 padding-right: 1rem;
-                // padding-top: 1.5rem;
                 content: '\f0c9';
                 float: right;
+            }
+            @media @desk-break {
+                border: 1px solid @border-line-color;
+                border-radius: 10px;
+                margin: 12px 24px;
+                padding: 16px 0;
+                text-indent: 1rem;
+                width: auto;
+                &:hover {
+                    border: 2px solid @border-line-color;
+                }
+            }
+        }
+        p {
+            opacity: 0;
+        }
+        &.sticky-header {
+            background: @nav-bg-color;
+            border-bottom: 1px solid rgba(0,0,0,0.8);
+            box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.6);
+            p {
+                align-self: center;
+                color: @logo-font-color;
+                display: inline-block;
+                font-family: @logo-font-stack;
+                font-size: 24px;
+                margin-left: 20%;
+                opacity: 1;
+                text-align: center;
+            }
+            @media @desk-break {
+                height: 72px;
             }
         }
     }
     h1 {
+        color: @logo-font-color;
+        font-family: @logo-font-stack;
+    }
+}
+
+#menu-overlay {
+    background: @overlay-color;
+    display: none;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 3;
+    &.display-menu {
+        display: block;
+    }
+}
+
+nav.menu-nav {
+    align-items: center;
+    background: @body-bg-color-two;
+    display: flex;
+    flex-direction: column;
+    left: 15%;
+    padding-bottom: 16px;
+    position: fixed;
+    top: 20%;
+    width: 70vw;
+    z-index: 4;
+    a, p {
         color: @nav-font-color;
-        font-family: monospace;
+        font-family: @body-font-stack;
+        padding: 8px 0;
+        margin: 8px 0;
+        text-decoration: none;
+    }
+    .close {
+        align-self: flex-end;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        padding: 8px;
+        overflow: hidden;
+        margin: 4px;
+        text-indent: 40px;
+        width: 40px;
+        // background SVG
+        @svg-code: '<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64"><style>line { stroke: #ffffff; stroke-width: 2px; }</style><line x1="20" y1="20" x2="44" y2="44" /><line x1="20" y1="44" x2="44" y2="20" /></svg>';
+        .svg-url(@svg-code);
+        background-image: @-inline-svg-url;
+    }
+    p {
+        border-bottom: 2px solid @border-line-color;
+        font-size: 24px;
+        padding: 0 0 24px;
+        text-align: center;
+        width: 70%;
+    }
+    @media @desk-break {
+        left: 40%;
+        width: 20vw;
     }
 }
