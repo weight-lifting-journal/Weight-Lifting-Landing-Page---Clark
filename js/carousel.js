@@ -77,22 +77,22 @@ constructor(contentData) {
     this.carouselCaption = document.createElement('div');
     this.carouselCaption.classList.add('carousel-caption');
     // Customize Caption ––– testimonials for Fit Me
+    this.testimonialQuote = document.createElement('p');
+    this.carouselCaption.appendChild(this.testimonialQuote);
+    this.testimonialQuote.classList.add('testimonial-quote');
+    this.testimonialQuote.textContent = `"${contentData.quote}"`;
     this.testimonialName = document.createElement('p');
     this.carouselCaption.appendChild(this.testimonialName);
     this.testimonialName.classList.add('testimonial-name');
-    this.testimonialName.textContent = contentData.name;
+    this.testimonialName.textContent = `– ${contentData.name}`;
     this.testimonialUserSince = document.createElement('p');
     this.carouselCaption.appendChild(this.testimonialUserSince);
     this.testimonialUserSince.classList.add('testimonial-user-since');
-    this.testimonialUserSince.textContent = contentData.userSince;
+    this.testimonialUserSince.textContent = `Joined: ${contentData.userSince.toDateString().match(/\s\w{3}/)} ${contentData.userSince.toDateString().match(/\d{4}/)}`;
     this.testimonialWorkoutStyle = document.createElement('p');
     this.carouselCaption.appendChild(this.testimonialWorkoutStyle);
     this.testimonialWorkoutStyle.classList.add('testimonial-workout-style');
     this.testimonialWorkoutStyle.textContent = contentData.workoutStyle;
-    this.testimonialQuote = document.createElement('p');
-    this.carouselCaption.appendChild(this.testimonialQuote);
-    this.testimonialQuote.classList.add('testimonial-quote');
-    this.testimonialQuote.textContent = contentData.quote;
     }
 }
   

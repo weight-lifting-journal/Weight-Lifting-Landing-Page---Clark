@@ -1,11 +1,11 @@
 .carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 500px;
+  // height: 80vh;
+  // overflow: hidden;
   position: relative;
-  overflow: hidden;
   margin-top: 16px;
+  @media @desk-break {
+    height: 60vh;
+  }
   .left-button, .right-button {
     background-color: @nav-bg-color;
     border-radius: 50%;
@@ -14,7 +14,11 @@
     height: 50px;
     position: absolute;
     text-align: center;
+    top: 25%;
     width: 50px;
+    @media @desk-break {
+      top: 50%;
+    }
     
     cursor: pointer;
     &:hover {
@@ -24,31 +28,48 @@
     }
   }
   .left-button {
-    top: 50%; 
-    left: 25px;
+    left: -24px;
+    padding: 5px 4px 0 0;
     transform: translate(0, -50%);
+    @media @desk-break {
+      right: 24px;
+    }
   }
   .right-button {
-    top: 50%; 
-    right: 25px;
+    padding: 5px 0 0 4px;
+    right: -24px;
     transform: translate(0, -50%);
+    @media @desk-break {
+      right: 24px;
+    }
   }
   img {
-    // display: none;
+    border: 1px solid black;
+    height: auto;
     width: 100%;
   }
 }
 
 .carousel-caption {
   background: @overlay-color;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
+  // bottom: 0;
+  // display: flex;
+  // flex-direction: column;
   padding: 16px;
-  position: absolute;
   width: 100%;
+  .testimonial-name {
+    font-size: 24px;
+    padding-left: 24px;
+  }
+  .testimonial-user-since {
+    display: inline-block;
+    padding: 8px 0;
+  }
+  .testimonial-workout-style {
+    float: right;
+    padding: 8px 0;
+  }
+  .testimonial-quote {
+    padding-bottom: 8px;
+  }
 }
-
-// .carousel-display-none {
-  // display: none;
-// }
