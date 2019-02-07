@@ -190,7 +190,7 @@ p {
 .carousel img {
   width: 100%;
 }
-.caption {
+.carousel-caption {
   background: rgba(46, 47, 66, 0.8);
   bottom: 0;
   display: flex;
