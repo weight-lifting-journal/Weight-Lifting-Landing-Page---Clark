@@ -55,7 +55,11 @@
   }
   img {
     border: 1px solid black;
+    max-height: 40vh;
     max-width: 100%;
+    @media @desk-break {
+      max-height: 100%;
+    }
   }
 }
 

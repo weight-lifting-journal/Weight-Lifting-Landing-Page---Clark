@@ -214,7 +214,13 @@ p {
 }
 .carousel img {
   border: 1px solid black;
+  max-height: 40vh;
   max-width: 100%;
+}
+@media (min-width: 880px) {
+  .carousel img {
+    max-height: 100%;
+  }
 }
 .carousel-caption {
   background: rgba(46, 47, 66, 0.8);
