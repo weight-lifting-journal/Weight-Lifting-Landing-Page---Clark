@@ -54,6 +54,9 @@ header {
 section {
     .grid-column(3);
     padding: 48px 0 64px;
+    @media @desk-break {
+        .grid-column(4);
+    }
     h4 {
         border-bottom: 2px solid @border-line-color;
         color: @hed-font-color;
@@ -69,8 +72,8 @@ section {
             width: 120px;
         }
     }
-    @media @desk-break {
-        .grid-column(4);
+    p {
+        padding-bottom: 16px;
     }
 }
 .section-wrapper {

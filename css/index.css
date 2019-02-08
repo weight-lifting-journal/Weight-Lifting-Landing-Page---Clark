@@ -162,10 +162,14 @@ p {
   align-items: center;
   background: rgba(46, 47, 66, 0.8);
   display: flex;
-  height: 60vh;
   justify-content: center;
-  padding-top: 8px;
   position: relative;
+}
+@media (min-width: 880px) {
+  .carousel .image-wrapper {
+    height: 60vh;
+    padding-top: 8px;
+  }
 }
 .carousel .left-button,
 .carousel .right-button {
@@ -433,6 +437,11 @@ section {
   grid-column: 3 / -3;
   padding: 48px 0 64px;
 }
+@media (min-width: 880px) {
+  section {
+    grid-column: 4 / -4;
+  }
+}
 section h4 {
   border-bottom: 2px solid rgba(255, 255, 255, 0.25);
   color: white;
@@ -450,10 +459,8 @@ section img.button {
     width: 120px;
   }
 }
-@media (min-width: 880px) {
-  section {
-    grid-column: 4 / -4;
-  }
+section p {
+  padding-bottom: 16px;
 }
 .section-wrapper {
   display: grid;
