@@ -1,30 +1,38 @@
 .carousel {
   // height: 80vh;
   // overflow: hidden;
-  position: relative;
+  // position: relative;
   margin-top: 16px;
   @media @desk-break {
+    height: 40vh;
+  }
+  .image-wrapper {
+    align-items: center;
+    background: @overlay-color;
+    display: flex;
     height: 60vh;
+    justify-content: center;
+    padding-top: 8px;
+    position: relative;
   }
   .left-button, .right-button {
     background-color: @nav-bg-color;
+    border: 1px inset white;
     border-radius: 50%;
     color: @nav-font-color;
     font-size: 40px;
     height: 50px;
     position: absolute;
     text-align: center;
-    top: 25%;
+    top: 50%;
     width: 50px;
-    @media @desk-break {
-      top: 50%;
-    }
     
     cursor: pointer;
     &:hover {
       color: @nav-bg-color;
       background-color: @nav-font-color;
       border: 3px solid @nav-bg-color;
+      padding-top: 3px;
     }
   }
   .left-button {
@@ -32,7 +40,7 @@
     padding: 5px 4px 0 0;
     transform: translate(0, -50%);
     @media @desk-break {
-      right: 24px;
+      left: 24px;
     }
   }
   .right-button {
@@ -45,16 +53,12 @@
   }
   img {
     border: 1px solid black;
-    height: auto;
-    width: 100%;
+    max-width: 100%;
   }
 }
 
 .carousel-caption {
   background: @overlay-color;
-  // bottom: 0;
-  // display: flex;
-  // flex-direction: column;
   padding: 16px;
   width: 100%;
   .testimonial-name {

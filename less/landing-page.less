@@ -7,22 +7,43 @@ h4 {
 }
 
 header {
-    background: gray;
+    background-color: #8b868c;
+    background-image: url(../images/filip-mroz-235735-unsplash.jpg);
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: 110%;
     .foundation-grid;
-    height: 60vh;
+    height: 80vh;
+    @media @desk-break {
+        background-position-x: right;
+        background-size: 50%;
+        height: 80vh;
+    }
     div {
         .grid-column(1);
-        align-self: center;
+        align-self: flex-end;
+        background: rgba(255, 255, 255, 0.45);
         width: 100%;
+        @media @desk-break {
+            align-self: center;
+            background: none;
+        }
         h1 {
             border-bottom: 2px solid @border-line-color;
+            color: black;
             font-size: 2rem;
             padding-bottom: 16px;
             margin-bottom: 24px;
+            @media @desk-break {
+                color: @logo-font-color;
+            }
         }
         p {
-            color: @nav-font-color;
+            color: black;
             text-transform: uppercase;
+            @media @desk-break {
+                color: @logo-font-color;
+            }
         }
         @media @desk-break {
             .grid-column(4);

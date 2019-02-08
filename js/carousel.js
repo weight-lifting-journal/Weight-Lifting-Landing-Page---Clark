@@ -3,13 +3,17 @@ class CarouselCreator {
       // create carousel holder
       this.carouselDiv = document.createElement('div');
       this.carouselDiv.classList.add('carousel');
+      // image wrapper to make spacing buttons easy
+      this.imageWrapper = document.createElement('div');
+      this.imageWrapper.classList.add('image-wrapper');
+      this.carouselDiv.appendChild(this.imageWrapper);
       // create buttons
       this.carouselLeftButton = document.createElement('div');
-      this.carouselDiv.appendChild(this.carouselLeftButton);
+      this.imageWrapper.appendChild(this.carouselLeftButton);
       this.carouselLeftButton.classList.add('left-button');
       this.carouselLeftButton.textContent = '<';
       this.carouselRightButton = document.createElement('div');
-      this.carouselDiv.appendChild(this.carouselRightButton);
+      this.imageWrapper.appendChild(this.carouselRightButton);
       this.carouselRightButton.classList.add('right-button');
       this.carouselRightButton.textContent = '>';
       // add eventListeners to buttons
@@ -21,7 +25,7 @@ class CarouselCreator {
       // NOTE: `new CarouselContent(item)` returns an object
       carouselData.forEach(item => {
         let child = new CarouselContent(item);
-        this.carouselDiv.appendChild(child['carouselImage']);
+        this.imageWrapper.appendChild(child['carouselImage']);
         this.carouselDiv.appendChild(child['carouselCaption']);
       });
   

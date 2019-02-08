@@ -151,38 +151,42 @@ p {
   line-height: 1.25;
 }
 .carousel {
-  position: relative;
   margin-top: 16px;
 }
 @media (min-width: 880px) {
   .carousel {
-    height: 60vh;
+    height: 40vh;
   }
+}
+.carousel .image-wrapper {
+  align-items: center;
+  background: rgba(46, 47, 66, 0.8);
+  display: flex;
+  height: 60vh;
+  justify-content: center;
+  padding-top: 8px;
+  position: relative;
 }
 .carousel .left-button,
 .carousel .right-button {
   background-color: #2E3549;
+  border: 1px inset white;
   border-radius: 50%;
   color: white;
   font-size: 40px;
   height: 50px;
   position: absolute;
   text-align: center;
-  top: 25%;
+  top: 50%;
   width: 50px;
   cursor: pointer;
-}
-@media (min-width: 880px) {
-  .carousel .left-button,
-  .carousel .right-button {
-    top: 50%;
-  }
 }
 .carousel .left-button:hover,
 .carousel .right-button:hover {
   color: #2E3549;
   background-color: white;
   border: 3px solid #2E3549;
+  padding-top: 3px;
 }
 .carousel .left-button {
   left: -24px;
@@ -191,7 +195,7 @@ p {
 }
 @media (min-width: 880px) {
   .carousel .left-button {
-    right: 24px;
+    left: 24px;
   }
 }
 .carousel .right-button {
@@ -206,8 +210,7 @@ p {
 }
 .carousel img {
   border: 1px solid black;
-  height: auto;
-  width: 100%;
+  max-width: 100%;
 }
 .carousel-caption {
   background: rgba(46, 47, 66, 0.8);
@@ -236,7 +239,7 @@ footer {
   text-align: center;
 }
 header div {
-  padding: 0 16px 32px;
+  padding: 16px;
   margin: 124px 0;
 }
 header nav {
@@ -372,25 +375,54 @@ h4 {
   margin: 8px 0 16px;
 }
 header {
-  background: gray;
+  background-color: #8b868c;
+  background-image: url(../images/filip-mroz-235735-unsplash.jpg);
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: 110%;
   display: grid;
   grid-template-columns: minmax(1rem, 1fr) repeat(12, minmax(1rem, 6rem)) minmax(1rem, 1fr);
-  height: 60vh;
+  height: 80vh;
+}
+@media (min-width: 880px) {
+  header {
+    background-position-x: right;
+    background-size: 50%;
+    height: 80vh;
+  }
 }
 header div {
   grid-column: 1 / -1;
-  align-self: center;
+  align-self: flex-end;
+  background: rgba(255, 255, 255, 0.45);
   width: 100%;
+}
+@media (min-width: 880px) {
+  header div {
+    align-self: center;
+    background: none;
+  }
 }
 header div h1 {
   border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+  color: black;
   font-size: 2rem;
   padding-bottom: 16px;
   margin-bottom: 24px;
 }
+@media (min-width: 880px) {
+  header div h1 {
+    color: white;
+  }
+}
 header div p {
-  color: white;
+  color: black;
   text-transform: uppercase;
+}
+@media (min-width: 880px) {
+  header div p {
+    color: white;
+  }
 }
 @media (min-width: 880px) {
   header div {
