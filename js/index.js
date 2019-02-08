@@ -17,7 +17,6 @@ window.addEventListener('scroll', function(e) {
     // use `if` conditional to check if `requestAnimationFrame()` has fired
     if (!scrollTicking) {
     window.requestAnimationFrame(function() {
-        console.log('scroll tick')
         stickyScroll();
         scrollTicking = false;
     });

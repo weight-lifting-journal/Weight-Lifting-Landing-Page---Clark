@@ -7,22 +7,43 @@ h4 {
 }
 
 header {
-    background: gray;
+    background-color: #545358;
+    background-image: url(../images/filip-mroz-235735-unsplash.jpg);
+    background-position-x: center;
+    background-repeat: no-repeat;
+    background-size: 110%;
     .foundation-grid;
-    height: 60vh;
+    height: 80vh;
+    @media @desk-break {
+        background-position-x: right;
+        background-size: 50%;
+        height: 80vh;
+    }
     div {
         .grid-column(1);
-        align-self: center;
+        align-self: flex-end;
+        background: rgba(255, 255, 255, 0.45);
         width: 100%;
+        @media @desk-break {
+            align-self: center;
+            background: none;
+        }
         h1 {
             border-bottom: 2px solid @border-line-color;
+            color: black;
             font-size: 2rem;
             padding-bottom: 16px;
             margin-bottom: 24px;
+            @media @desk-break {
+                color: @logo-font-color;
+            }
         }
         p {
-            color: @nav-font-color;
+            color: black;
             text-transform: uppercase;
+            @media @desk-break {
+                color: @logo-font-color;
+            }
         }
         @media @desk-break {
             .grid-column(4);
@@ -33,12 +54,15 @@ header {
 section {
     .grid-column(3);
     padding: 48px 0 64px;
+    @media @desk-break {
+        .grid-column(4);
+    }
     h4 {
         border-bottom: 2px solid @border-line-color;
         color: @hed-font-color;
         padding-bottom: 12px;
     }
-    img {
+    img.button {
         border-radius: 100%;
         height: 40vw;
         margin: 16px 0;
@@ -48,8 +72,8 @@ section {
             width: 120px;
         }
     }
-    @media @desk-break {
-        .grid-column(4);
+    p {
+        padding-bottom: 16px;
     }
 }
 .section-wrapper {
@@ -78,5 +102,17 @@ section {
         .slasher(@body-bg-color-three);
         background: @body-bg-color-three;
         text-align: right;
+    }
+    &.style-four {
+        .slasher(@purple-color);
+        background: @purple-color;
+
+        &:before {
+            transform: scaleX(-1);
+        }
+
+        &:after {
+            transform: scaleY(-1) scaleX(-1);
+        }
     }
 }

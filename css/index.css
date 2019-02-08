@@ -150,8 +150,106 @@ p {
   font-family: 'Open Sans', sans-serif;
   line-height: 1.25;
 }
+.carousel {
+  margin-top: 16px;
+}
+@media (min-width: 880px) {
+  .carousel {
+    height: 40vh;
+  }
+}
+.carousel .image-wrapper {
+  align-items: center;
+  background: rgba(46, 47, 66, 0.8);
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+@media (min-width: 880px) {
+  .carousel .image-wrapper {
+    height: 60vh;
+    padding-top: 8px;
+  }
+}
+.carousel .left-button,
+.carousel .right-button {
+  background-color: #2E3549;
+  border: 1px inset white;
+  border-radius: 50%;
+  color: white;
+  font-size: 40px;
+  height: 50px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  width: 50px;
+  cursor: pointer;
+}
+.carousel .left-button:hover,
+.carousel .right-button:hover {
+  color: #2E3549;
+  background-color: white;
+  border: 3px solid #2E3549;
+  padding-top: 3px;
+}
+.carousel .left-button {
+  left: -24px;
+  padding: 5px 4px 0 0;
+  transform: translate(0, -50%);
+}
+@media (min-width: 880px) {
+  .carousel .left-button {
+    left: 24px;
+  }
+}
+.carousel .right-button {
+  padding: 5px 0 0 4px;
+  right: -24px;
+  transform: translate(0, -50%);
+}
+@media (min-width: 880px) {
+  .carousel .right-button {
+    right: 24px;
+  }
+}
+.carousel img {
+  border: 1px solid black;
+  max-height: 40vh;
+  max-width: 100%;
+}
+@media (min-width: 880px) {
+  .carousel img {
+    max-height: 100%;
+  }
+}
+.carousel-caption {
+  background: rgba(46, 47, 66, 0.8);
+  padding: 16px;
+  width: 100%;
+}
+.carousel-caption .testimonial-name {
+  font-size: 24px;
+  padding-left: 24px;
+}
+.carousel-caption .testimonial-user-since {
+  display: inline-block;
+  padding: 8px 0;
+}
+.carousel-caption .testimonial-workout-style {
+  float: right;
+  padding: 8px 0;
+}
+.carousel-caption .testimonial-quote {
+  padding-bottom: 8px;
+}
+footer {
+  grid-column: 2 / -2;
+  background: grey;
+  padding: 128px 0 48px;
+  text-align: center;
+}
 header div {
-  padding: 0 16px 32px;
+  padding: 16px;
   margin: 124px 0;
 }
 header nav {
@@ -277,12 +375,6 @@ nav.menu-nav p {
     width: 20vw;
   }
 }
-footer {
-  grid-column: 2 / -2;
-  background: grey;
-  padding: 128px 0 48px;
-  text-align: center;
-}
 h1,
 h2,
 h3,
@@ -293,25 +385,54 @@ h4 {
   margin: 8px 0 16px;
 }
 header {
-  background: gray;
+  background-color: #545358;
+  background-image: url(../images/filip-mroz-235735-unsplash.jpg);
+  background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: 110%;
   display: grid;
   grid-template-columns: minmax(1rem, 1fr) repeat(12, minmax(1rem, 6rem)) minmax(1rem, 1fr);
-  height: 60vh;
+  height: 80vh;
+}
+@media (min-width: 880px) {
+  header {
+    background-position-x: right;
+    background-size: 50%;
+    height: 80vh;
+  }
 }
 header div {
   grid-column: 1 / -1;
-  align-self: center;
+  align-self: flex-end;
+  background: rgba(255, 255, 255, 0.45);
   width: 100%;
+}
+@media (min-width: 880px) {
+  header div {
+    align-self: center;
+    background: none;
+  }
 }
 header div h1 {
   border-bottom: 2px solid rgba(255, 255, 255, 0.25);
+  color: black;
   font-size: 2rem;
   padding-bottom: 16px;
   margin-bottom: 24px;
 }
+@media (min-width: 880px) {
+  header div h1 {
+    color: white;
+  }
+}
 header div p {
-  color: white;
+  color: black;
   text-transform: uppercase;
+}
+@media (min-width: 880px) {
+  header div p {
+    color: white;
+  }
 }
 @media (min-width: 880px) {
   header div {
@@ -322,27 +443,30 @@ section {
   grid-column: 3 / -3;
   padding: 48px 0 64px;
 }
+@media (min-width: 880px) {
+  section {
+    grid-column: 4 / -4;
+  }
+}
 section h4 {
   border-bottom: 2px solid rgba(255, 255, 255, 0.25);
   color: white;
   padding-bottom: 12px;
 }
-section img {
+section img.button {
   border-radius: 100%;
   height: 40vw;
   margin: 16px 0;
   max-width: 40vw;
 }
 @media (min-width: 880px) {
-  section img {
+  section img.button {
     height: 120px;
     width: 120px;
   }
 }
-@media (min-width: 880px) {
-  section {
-    grid-column: 4 / -4;
-  }
+section p {
+  padding-bottom: 16px;
 }
 .section-wrapper {
   display: grid;
@@ -426,4 +550,33 @@ section img {
   bottom: -40px;
   left: 0;
   transform: scaleY(-1);
+}
+.section-wrapper.style-four {
+  background: #4c5c96;
+}
+.section-wrapper.style-four:before,
+.section-wrapper.style-four:after {
+  background-image: url('data:image/svg+xml,%3C?xml%20version%3D%221.0%22%20?%3E%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%22100%22%20height%3D%22100%22%20viewBox%3D%220%200%20100%20100%22%20preserveAspectRatio%3D%22none%22%3E%3Cpolygon%20points%3D%220,100%20100,0%20100,100%22%20style%3D%22fill%3A%234c5c96%3B%22/%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  content: '';
+  display: block;
+  height: 40px;
+  position: absolute;
+  width: 100%;
+}
+.section-wrapper.style-four:before {
+  left: 0;
+  top: -40px;
+}
+.section-wrapper.style-four:after {
+  bottom: -40px;
+  left: 0;
+  transform: scaleY(-1);
+}
+.section-wrapper.style-four:before {
+  transform: scaleX(-1);
+}
+.section-wrapper.style-four:after {
+  transform: scaleY(-1) scaleX(-1);
 }
